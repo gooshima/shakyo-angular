@@ -1,0 +1,54 @@
+[
+  {
+    "ja": "ディレクティブ : ng-app",
+    "en": "<html ng-app='hogeApp'>"
+  },
+  {
+    "ja": "ディレクティブ : ng-model",
+    "en": "<input ng-model='hogeModel'> Hello {{ hoge }}"
+  },
+  {
+    "ja": "モジュール",
+    "en": "angular.module('hogeApp', ['hogeMod_1', 'hogeMod_2'])"
+  },
+  {
+    "ja": "サービス factory",
+    "en": "angular.module(...).factory('Hoges', ['$resource', function ($resource) {\nreturn $resource('/hoges/:id', null, { 'update': {method: 'PUT'}});\n}])"
+  },
+  {
+    "ja": "Controllers",
+    "en": "<body ng-controller='HogeController'>"
+  },
+  {
+    "ja": "Controllers",
+    "en": "angular.module(...).controller('HogeController', ['$scope', 'Hoges', function ($scope, Hoges) {\n$scope.editing = [];\n $scope.hoges = Hoges.funcFromHoges();\n}])"
+  },
+  {
+    "ja": "Routes",
+    "en": "<script type='text/ng-template' id='/hoge.html'>"
+  },
+  {
+    "ja": "Routesを使う。",
+    "en": "angular.module('app', ['ngRoute'])"
+  },
+  {
+    "ja": "Routesの設定",
+    "en": ".config(['$routeProvider', function ($routeProvider) {\n$routeProvider\n.when('/', {templateUrl: '/hoge.html',controller: 'hogeController'})\n}]);"
+  },
+  {
+    "ja": "テンプレートを使用する。",
+    "en": "<script type='text/ng-template' id='/hoge.html'>\n<p>{{ hoge.name }}</p>\n</script>"
+  },
+  {
+    "ja": "リスト表示例",
+    "en": "<ul>\n<li ng-repeat='hoge in hogeList | filter: serach'>\n<input type='checkbox' ng-model='hoge.completed' ng-change='update($index)'\n</li>\n</ul>"
+  },
+  {
+    "ja": "ボタン押下時の処理",
+    "en": "<button ng-show='hoge' ng-click='updateHoge($index)'>Update</button>"
+  }
+]
+
+
+
+
