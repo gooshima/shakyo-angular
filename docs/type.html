@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Typing Apps</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header style="background-color: darkgray; text-align: left">
+    <h1>写経でタイピングを練習するアプリケーションです。</h1>
+</header>
+
+<section id="app">
+
+    <style>
+        .app-list {
+            background-color: rgba(227, 242, 253, 0.8);
+            position: absolute;
+            top: 1em;
+            left: 0;
+            width: 25em;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 0 0.7em 0 #de917f;
+            border: 1px dotted purple;
+            height: 95%;
+            z-index: 1;
+        }
+
+        .app-list-close {
+            float: right;
+            margin-right: 10px;
+        }
+    </style>
+    <section class="app-list hide" id="js-app-list">
+        <div>一覧</div>
+        <button class="app-list-close">×</button>
+
+        <div id="js-odaiList" style="display: inline-block">
+            <!--TODO リストに変更する。-->
+            <label><a href="list.html">←</a> お題
+                <select id="odaiSelect">
+                    <option selected>--------</option>
+                </select>
+            </label>
+        </div>
+    </section>
+
+    <section class="app-main">
+        <section id="app-main-info">
+
+            <p id="js-app-main-info-odai">お題 : </p>
+            <p id="notice">I am Typing Area</p>
+
+            <section id="app-main-record" style="border: 1px dotted yellow">
+                <p id="storedDataDisplay">最高記録 : -</p>
+            </section>
+
+            <section id="app-main-settings" style="border: 1px dotted darkgray">
+                <style>
+                    #app-main-settings label{
+                        border: 1px dotted;
+                        padding: 13px;
+                    }
+                </style>
+                <label>
+                    <input id="isSoundOn" type="checkbox"> 音楽あり
+                </label>
+                <label>
+                    <input id="isOdaiRandom" type="checkbox"> お題ランダム
+                </label>
+                <label>
+                    <input id="isTypeHide" type="checkbox"> タイプ非表示
+                </label>
+                <label>
+                    <a href="#" id="js-odaiList-menu">←</a> メニュ-
+                </label>
+            </section>
+
+        </section>
+        <!--<img src="img/typ-num.png" width="50%">-->
+        <!--<img src="img/us.gif" width="70%">-->
+        <section id="app-main-typingArea">
+            <div style="margin-top: -80px;">
+                <div class="typingBoard">
+                    <p style="position: absolute; top: -210px;left: -90px; font-size: 2em; color: red">残り<span
+                            id="gameTimer">-</span>秒</p>
+                    <!--<img src="img/bag.png" class="bug">-->
+
+                    <p class="odai-ttl">ちょっと休憩</p>
+                    <ul id="odai-contents"><!--TODO 未使用か？-->
+                    <ul id="odai-display">
+                        <li>
+                            <span class="odai-text-typed"> </span><span class="odai-text"> スペースキーを押すとスタートします。 </span>
+                        </li>
+                    </ul>
+                </div>
+                <img src="img/piano_bg8.jpg" width="90%">
+            </div>
+         </section>
+
+    </section>
+</section>
+
+<script src="./js/libs/jquery-2.2.3.min.js"></script>
+<script src="./js/main.js" type="text/javascript"></script>
+</body>
+</html>
